@@ -1,0 +1,26 @@
+{
+  "name": "testdeploy",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://tmsmith1150.github.io/testdeploy",
+  "main": "server/server.js",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "node server/server.js",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm run dev\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "build": "cd client && npm run build",
+    "render-build": "npm install && npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "eslint": "^9.6.0"
+  },
+  "dependencies": {
+    "gh-pages": "^6.1.1"
+  }
+}
